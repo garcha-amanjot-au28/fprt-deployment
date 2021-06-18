@@ -7,21 +7,39 @@ if not num%2 ==0 :
         for n in range (a-2):
             print("*",end="")
         print("")
+        
         print("\n")
-        print(" "*(b),end="")
-        b=b+1
         a=a-2
         if a==1:
             break
-    print("\n")
-    for l in range (c):
-        for j in range(1,c-l):
-            
-            print(" ",end="")
-        for k in range(2*l+1):
+        print(" "*(b),end="")
+        b=b+1
+        
+
+    
+    c=1
+    d=num//2
+
+    for l in range (num):
+        print(" "*(d),end="")
+
+        for j in range (c+l):
             print("*",end="")
+        d-=1
+        c+=1
+        if d == -1:
+            break
         print("")
         print("\n")
+        
+    
+        
+
+   
+    
+    
+    
+        
         
     
         
