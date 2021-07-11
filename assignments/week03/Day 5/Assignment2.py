@@ -1,6 +1,6 @@
 # define a function for calculating
 # the area of a shapes
-def calculate_area(name):\
+def calculate_area(name):
     
   # converting all characters
   # into lower cases
