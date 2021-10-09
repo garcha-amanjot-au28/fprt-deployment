@@ -1,0 +1,54 @@
+body{
+    display: flex;
+    align-content: center;
+    justify-content:center;
+    
+    position:relative;
+
+}
+div{
+    position:absolute;
+    margin-top: 20%;
+}
+.btn{
+    border:none;
+    color: white;
+    padding:20px 38px;
+    text-decoration: none;
+    text-align:center;
+    display:inline-block;
+    font-size: 16px;
+    border-radius:4px;
+    transition: transform .25s ease, shadow .25 ease;
+    
+    
+    
+}
+.btn:hover{
+    transform:scale(1.25);
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 4px rgba(0, 0, 0, 0.19);
+}
+
+.default{
+    color:black;
+    border-style:solid!important;
+    border:1px;
+    border-color:black;
+    background-color: white;
+    
+}
+.primary{
+    background-color: blue;
+}
+.success{
+    background-color:rgb(62, 194, 62);
+}
+.info{
+    background-color: rgba(60, 60, 245, 0.719);
+}
+.warning{
+    background-color: rgb(255, 210, 9);
+}
+.danger{
+    background-color: red;
+}
