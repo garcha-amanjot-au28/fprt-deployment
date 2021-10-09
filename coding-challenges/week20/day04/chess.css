@@ -1,0 +1,43 @@
+body{display: flex;
+    justify-content:center;
+    max-width: 800px;
+    margin:0 auto;
+    padding:20px;
+}
+
+    
+
+.board {
+    position:relative;
+    width : 40em;
+    height :42em;
+    
+    border: 0.50em;
+    border-color : black;
+    border-style: solid;
+    display:flex;
+    margin:0 ;
+    padding:0 ;
+    
+    
+    
+}
+
+.white {
+    background-color:white;
+    width:5em;
+    height:5em;
+    
+}
+.black{
+    background-color:black;
+    width:5em;
+    height:5em;
+    
+    
+      
+}
+ div table{
+    margin:0;
+    padding:0;
+}
