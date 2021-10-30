@@ -1,0 +1,195 @@
+Core CSE 
+
+Q.1  List out different OOPS principles and explain ? (10 marks)
+
+Ans1. There are 4 basic principles of Object Oriented Programming
+
+1. Encapsulation: Encapsulation refers to hiding of Data implementation by restricting access to public methods. In other words we can say 
+Encapsulation is achieved when each object maintains a private state inside a class. Other objects cannot access this state directly instead they 
+can only invoke a list of public functions. In order to communicate with the object you will need to utilize the methods provided.
+Encapsulation means hiding the details of the object and providing a decent interface for the entities in outer world to interact with that 
+object or entity.
+
+2. Abstraction : It is the process of selecting data from a larger pool to show only the relevant details to the object. Abstraction
+(focussing on necessary details) is different from Encapsulation(hiding details from the outer world).Abstraction is the concept of taking some 
+object from the real world, and converting it to programming terms. Such as creating a Patient class and giving it int health, int age, String 
+name, etc. properties, and eat() smoke()etc. methods. And if we were creating a list of patients who smoke or not we will not need all the 
+information patient class we might only use patient' name and whether smoke or not , so we use whatever information is needed for the job at hand 
+from a larger pool , this is incapsulation.
+
+3. Polymorphism : Polymorphism gives us a way to use a class exactly like its parent so there is no confusion with mixing types. This being said, 
+each child sub-class keeps its own functions/methods as they are. If we had a superclass called Mammal that has a method called mammalSound(). 
+The sub-classes of Mammals could be Dogs, whales, elephants, and horses. Each of these would have their own iteration of a mammal sound 
+(dog-barks, whale-clicks).
+
+4. Inheritance: Inheritance is the ability of one object to acquire some/all properties of another object. For example, a child inherits the 
+traits of his/her parents. With inheritance, reusability is a major advantage. You can reuse the fields and methods of the existing class. 
+In Java, there are various types of inheritances: single, multiple, multilevel, hierarchical, and hybrid. For example, Apple is a fruit so 
+assume that we have a class Fruit and a subclass of it named Apple. Our Apple acquires the properties of the Fruit class. Other classifications 
+could be grape, pear, and mango, etc. Fruit defines a class of foods that are mature ovaries of a plant, fleshy, contains a large seed within or 
+numerous tiny seeds. Apple the sub-class acquires these properties from Fruit and has some unique properties, which are different from other 
+sub-classes of Fruit such as red, round, depression at the top. 
+
+Q.2 List out Layers of TCP/IP model and explain ?
+Ans.2 : TCP/IP model is structered into 4 layers which are as follows:
+
+1. Network Access Layer: This is the bottom-most layer of the TCP/IP model architecture
+It is a combination of the Data Link and Physical Layer of the OSI model
+The physical transmission of data takes place at this layer
+Once the frames are transmitted by a network, encapsulating the IP datagram into these frames is done in this layer
+Also, the mapping of IP address into physical address is done here
+Mainly, the function of this layer is to transmit the data between two devices, connected in a network.
+
+2. Internet Layer : Sending the data packets to their destination network is the main function of the Internet layer
+The logical transmission of data takes place at this level which are:
+IP: One of the most important protocols as it detects the IP address of a device which is later used for internetwork connections. 
+It is using this protocol that the path with which the data shall be transmitted is decided.
+ARP: It stands for Address Resolution Protocol. The physical address from the IP address can be determined using ARP. 
+ICMP : It stands for Internet Control Message Protocol and notification regarding datagram problems can be sent back to the user using this.
+ Any issue with the network is immediately notified to the user by ICMP. It can only inform the user about the errors and cannot rectify the 
+ problem. 
+
+ 3. Host-To-Host Layer:
+This layer is parallel to the transport layer of the OSI Model
+The error-free delivery of data is the main function of this layer
+There are two main protocols present in this layer:
+TCP: Another integral part, the Transmission Control Protocol is a reliable communication protocol. It manager the flow of data, i.e. the 
+sequence and segmentation of the data.
+UDP: It is a connection-free protocol which makes it cost-effective but less reliable. 
+
+4. Application Layer:
+The topic three layers of the OSI Model: Application, Presentation and Sessions, when combined together, they perform similar functions as the 
+Application Layer of the TCP/IP model node-to-node communication based on the user-interface occurs here.
+Multiple protocols are present in this layer, a few common ones have been mentioned below:
+HTTP: Hypertext Transfer Protocol is used to manage the communication between the server and web browsers.
+NTP: Network Time Protocol can set one standard time source in our computer, which enables sync between the server and the user.
+TELNET: Telecommunication Network is used to have access to files present of the Telnet network and manage them on internet.
+FTP: File Transfer Protocol, as the name suggests allows easy transferring of files.
+
+
+Q.5  Explain LRU cache and its implementation by taking some examples and explaining all
+steps. (5 marks)
+Ans.5 Least Recently Used (LRU) is a common caching strategy. It defines the policy to evict elements from the cache to make room for new 
+elements when the cache is full, meaning it discards the least recently used items first.Let’s take an example of a cache that has a capacity 
+of 4 elements. 
+Lets represent these elements with the help of list = [1, 2, 3 and 4.]
+The list above represents the cache state after first access of all four elements. We now need to cache another element “6”.
+New list = [2,3,4,6]
+In LRU cache, we evict the least recently used element (in this case “1”) in case a new element needs to be cached. Now “2” is next in line 
+to be evicted if a new element needs to be cached. Let’s see what happens when “2” is accessed again.
+New list = [3,4,6,2] 
+Now “3” becomes the next in line to be evicted from the cache.
+
+Q.6  Explain virtual memory.
+Ans.6 Virtual Memory is a storage allocation scheme in which secondary memory can be addressed as though it were part of the main memory. 
+The addresses a program may use to reference memory are distinguished from the addresses the memory system uses to identify physical storage sites, 
+and program-generated addresses are translated automatically to the corresponding machine addresses. The size of virtual storage is limited by the 
+addressing scheme of the computer system and the amount of secondary memory is available not by the actual number of the main storage locations.
+It is a technique that is implemented using both hardware and software. It maps memory addresses used by a program, called virtual addresses, into 
+physical addresses in computer memory. All memory references within a process are logical addresses that are dynamically translated into physical 
+addresses at run time. 
+This means that a process can be swapped in and out of the main memory such that it occupies different places in the main memory at different times 
+during the course of execution.
+A process may be broken into a number of pieces and these pieces need not be continuously located in the main memory during execution. 
+The combination of dynamic run-time address translation and use of page or segment table permits this.
+If these characteristics are present then, it is not necessary that all the pages or segments are present in the main memory during execution. 
+This means that the required pages need to be loaded into memory whenever required. Virtual memory is implemented using Demand Paging or
+ Demand Segmentation. 
+
+Q.7 Explain Deadlock and its characteristics. (5 marks)
+Ans. 7 A deadlock happens in operating system when two or more processes need some resource to complete their execution that is held by the 
+other process.A deadlock occurs if the four Coffman conditions hold true. But these conditions are not mutually exclusive. 
+They are given as follows :
+Mutual Exclusion:
+There should be a resource that can only be held by one process at a time. In the diagram below, there is a single instance of Resource 1 
+and it is held by Process 1 only.
+Hold and Wait:
+A process can hold multiple resources and still request more resources from other processes which are holding them. In the diagram given below,
+ Process 2 holds Resource 2 and Resource 3 and is requesting the Resource 1 which is held by Process 1.
+
+No Preemption:
+A resource cannot be preempted from a process by force. A process can only release a resource voluntarily. In the diagram below, Process 2 cannot 
+preempt Resource 1 from Process 1. It will only be released when Process 1 relinquishes it voluntarily after its execution is complete.
+
+Circular Wait:
+A process is waiting for the resource held by the second process, which is waiting for the resource held by the third process and so on, till 
+the last process is waiting for a resource held by the first process. This forms a circular chain. For example: Process 1 is allocated Resource2
+ and it is requesting Resource 1. Similarly, Process 2 is allocated Resource 1 and it is requesting Resource 2. This forms a circular wait loop.
+
+Q8. Explain NAT and ARP protocol ? ( 5 marks)
+Ans. NAT () Network Address Translation ):  NAT is the process of reassigning the single IP address space into a further one by altering the 
+network address data in the IP header of the data packet while they are traveling through a network towards the destination node.
+Generally, NAT works on a router or gateway and interconnects two networks with each other by translating the private addresses into the registered
+ addresses before the data being transmitted to another network.NAT is having the potential to broadcast only one IP address to the public network 
+ on behalf of the entire internal network. This provisions the feature of security by efficiently hiding the overall IP address of the private 
+ network behind that solo address. Thus NAT tenders the double feature of address translation and security for networking systems.
+
+ARP :
+Address Resolution Protocol (ARP) is an important protocol of the network layer in the OSI model, which helps find the MAC (Media Access Control) 
+address given the system’s IP address. The ARP’s main task is to convert the 32-bit IP address (for IPv4) to a 48-bit MAC address.
+This protocol is mostly used to determine the hardware (MAC) address of a device from an IP address. It is also used when one device wants 
+to communicate with some other device on a local network.
+How Address Resolution Protocol (ARP) works?
+All OS in an IPv4 network keep an ARP cache. When the host requests a MAC address to send a packet to another host in the LAN, it checks its
+ ARP cache to check that the MAC address translation already presents.
+ Address Resolution Methods
+Association between a protocol address and a hardware address is known as binding.
+There are three techniques used for this purpose:
+
+Table lookup – Bindings stored in memory with protocol address as the key. It uses the data link layer checks the protocol address to find the hardware address.
+Dynamic–This type of network messaging method is used for “just-in-time” resolution. Data link layer sends message requests in a hardware address. destination responds.
+Closed-form computation–In this method, a protocol address is based on a hardware address. Data link layer derives the hardware address from the protocol address.
+Types of ARP
+Here are four types of Address Resolution Protocol, which is given below:
+
+Proxy ARP
+Gratuitous ARP
+Reverse ARP
+Inverse ARP
+
+Q3. Construct a binary tree by using postorder and inorder sequences given below.
+Inorder: N, M, P, O, Q
+Postorder: N, P, Q, O, M 
+
+Ans.3  We can construct tree by following steps:
+1) We first find the last node in post[]. The last node is "M", we know this value is root as the root always appears at the end of postorder 
+traversal.
+2) We search "M" in in[] to find the left and right subtrees of the root. Everything on the left of "M" in in[] is in the left subtree and 
+everything on right is in the right subtree. 
+
+Again for the right subtree P , O , Q we can tell that O is the root as it appears last of the three in Postorder .
+And we can tell that P is left left and Q is right from Inorder as it falls on left and right.
+
+So tree is as follows :
+
+
+                                 M
+
+                           N           O 
+                                   
+                                  P         Q
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
