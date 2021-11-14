@@ -18,19 +18,24 @@ class Employee extends Person{
         this.id = id
     }
 }
-class Admin extends Person{
-    constructor(name,age,admin){
-        super(name,age)
+class Admin extends Employee{
+    constructor(name,age,id,admin){
+        super(name,age,id)
         this.admin = admin
     }
-    update(){
-        this.name = "sooraj"
-        this.admin = "neeraj"
-        console.log(this.name,this.admin)
+    updateemployeename(naam){
+        this.name = naam
+        
+        console.log(`Employee with id no.${this.id} changed to ${naam}`)
+    }
+    updateadminname(naam){
+        this.admin = naam
+        console.log(`Admin name changed to ${naam}`)
     }
 }
 let test = new Employee("aman","22",123)
 test.outout();  
-let test2 = new Admin("jai","33","sid")
-console.log(test2.name,test2.admin)
-test2.update()
+let test2 = new Admin("Sooraj S.","33",1,"Sid")
+console.log(` id = ${test2.id} name = ${test2.name} admin name = ${test2.admin}`)
+test2.updateemployeename("Suraj Singh")
+test2.updateadminname('Sidharth')
