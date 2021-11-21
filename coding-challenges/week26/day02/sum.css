@@ -1,6 +1,31 @@
 .container{
-    border: solid , 2px , black;
+    border: 2px solid black;
+    width:400px;
+    height:450px;
+    left:50%;
+    top:50%;
+    position: absolute;
+    transform:translate(-200px,-200px);
+    display: flex;
+    justify-content: center;
+    
+    
 }
-.h1{
+h1{
     color:red;
+}
+.heading{
+    display:flex;
+    justify-content: center;
+    position: relative;
+}
+.center {
+    position:relative;
+}
+.items{
+    
+    position: relative;
+
+    display: flexbox;
+    justify-items: center;
 }

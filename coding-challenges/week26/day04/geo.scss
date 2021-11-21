@@ -1,0 +1,37 @@
+.container {
+    height:500px;
+    width: 800px;
+    left:50%;
+    top:50%;
+    position: absolute;
+    transform: translate(-300px,-250px);
+    display:flexbox;
+    justify-items:center;
+    
+}
+.heading{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+}
+#findloc{
+    width:200px;
+    height:55px;
+    border-radius: 4px;
+    background-color: rgb(77, 241, 241);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    border: none;
+    transform: translate(160px,27.5px);
+
+}
+#loc {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    margin-top: 75px;
+    margin-left: -90px;
+}
+
+#map{
+    
+    height:100%;
+}
