@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.dog{
+    display:relative;
+    width: 600px;
+    height: 700px;
+    
+    
+    
+}
+
+#dogimg{
+    width:400px;
+    height: 500px;
+    
+    margin-left: -15px;
+    margin-top: 15px;
+}
+#getdog{
+    margin-top: 20px;
+    margin-left: 125px;
+    width: 200px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    border:2px solid red;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: bolder;
+    transition: ease-in-out;
+}
+#getdog:hover{
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.288);
+}
+#getdog:active{
+    background-color: red;
+}
