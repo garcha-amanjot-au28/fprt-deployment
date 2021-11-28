@@ -1,0 +1,168 @@
+Q.1  Describe LRU cache in brief? (Marks 10)
+Ans 1. The LRU Cache is a data structure that contains a finite number of elements and evicts the least recently used element whenever an element 
+is exceeded. Take the following LRU cache with capacity 4 and elements:
+
+[1, 2, 3, 4]
+
+1 is our most recently used element and 4 is our last used element (Left to Right pattern). Below is what insertion looks like:
+
+Say we insert the element 5. Our LRU Cache is now: [1, 2, 3, 4, 5]
+Our LRU cache’s capacity has exceeded. We effect the last used element (4). Our LRU Cache is now [1, 2, 3, 5]
+This is what access looks like:
+
+Say we access the element 3. The element 3 is now our most recently accessed element. Our LRU Cache is now: [3, 1, 2, 5]
+
+The purposes of a cache is to computationally reduce lookup times—the get() and insert() operations to an LRU Cache run in constant O(1) time.
+
+The implementation of an LRU Cache involves a combination of a doubly-linked list and a hash table:
+
+A doubly linked list has two pointers, a head pointer and a tail pointer. As mentioned previously, the end of the LRU cache is the LRU element. 
+So simply called the tail pointer would retrieve the LRU element—yielding constant O(1) time.
+To retrieve all the other elements however, we need to use a HashMap in order to enable constant O(1) lookup. The HashMap maps the elements inside
+ the LRU cache to their respective Node pointers inside the doubly-linked list.
+Access (get()): There are two aspects involved in accessing an element in an LRU Cache: finding the requested node, which can be done with a simple
+ O(1) lookup in our HashMap, and then moving the requested node to the front of the doubly-linked list (it is now the most recently used element).
+Insertion (put()): Insert the element node into the front of the doubly-linked list + update the HashMap with that new element. If the LRU cache’s 
+capacity is exceeded, evict the last node (tail) by removing it from the doubly-linked list and the HashMap.
+Time complexity is constant O(1) and space complexity is linear O(n) since our doubly-linked list and HashMap expand according to the number of 
+elements in the LRU cache.
+
+3. What is NAT and ARP? Describe briefly (Marks 10)
+Ans. 3 To access the Internet, one public IP address is needed, but we can use a private IP address in our private network. The idea of NAT is 
+to allow multiple devices to access the Internet through a single public address. To achieve this, the translation of a private IP address to a
+ public IP address is required. Network Address Translation (NAT) is a process in which one or more local IP address is translated into one or 
+ more Global IP address and vice versa in order to provide Internet access to the local hosts. Also, it does the translation of port numbers i.e. 
+ masks the port number of the host with another port number, in the packet that will be routed to the destination. It then makes the corresponding
+  entries of IP address and port number in the NAT table. NAT generally operates on a router or firewall. 
+
+Network Address Translation (NAT) working – 
+Generally, the border router is configured for NAT i.e the router which has one interface in the local (inside) network and one interface in the 
+global (outside) network. When a packet traverse outside the local (inside) network, then NAT converts that local (private) IP address to a global
+ (public) IP address. When a packet enters the local network, the global (public) IP address is converted to a local (private) IP address. 
+
+ Network Address Translation (NAT) Types – 
+There are 3 ways to configure NAT: 
+ 
+
+Static NAT – In this, a single unregistered (Private) IP address is mapped with a legally registered (Public) IP address i.e one-to-one mapping between local and global addresses. This is generally used for Web hosting. These are not used in organizations as there are many devices that will need Internet access and to provide Internet access, a public IP address is needed. 
+Suppose, if there are 3000 devices that need access to the Internet, the organization has to buy 3000 public addresses that will be very costly. 
+ 
+
+Dynamic NAT – In this type of NAT, an unregistered IP address is translated into a registered (Public) IP address from a pool of public
+
+ IP addresses. If the IP address of the pool is not free, then the packet will be dropped as only a fixed number of private IP addresses 
+ can be translated to public addresses. 
+Suppose, if there is a pool of 2 public IP addresses then only 2 private IP addresses can be translated at a given time. If 3rd private IP 
+address wants to access the Internet then the packet will be dropped therefore many private IP addresses are mapped to a pool of public IP 
+addresses. NAT is used when the number of users who want to access the Internet is fixed. This is also very costly as the organization has 
+to buy many global IP addresses to make a pool. 
+ 
+
+Port Address Translation (PAT) – This is also known as NAT overload. In this, many local (private) IP addresses can be translated to a single
+ registered IP address. Port numbers are used to distinguish the traffic i.e., which traffic belongs to which IP address. This is most frequently
+  used as it is cost-effective as thousands of users can be connected to the Internet by using only one real global (public) IP address. 
+ 
+Advantages of NAT – 
+ 
+
+NAT conserves legally registered IP addresses. 
+ 
+It provides privacy as the device’s IP address, sending and receiving the traffic, will be hidden. 
+ 
+Eliminates address renumbering when a network evolves. 
+ 
+Disadvantage of NAT – 
+ 
+
+Translation results in switching path delays. 
+ 
+Certain applications will not function while NAT is enabled. 
+ 
+Complicates tunneling protocols such as IPsec. 
+ 
+Also, the router being a network layer device, should not tamper with port numbers(transport layer) but it has to do so because of NAT. 
+
+ARP : Most of the computer programs/applications use logical address (IP address) to send/receive messages, however, the actual communication
+ happens over the physical address (MAC address) i.e from layer 2 of the OSI model. So our mission is to get the destination MAC address which
+  helps in communicating with other devices. This is where ARP comes into the picture, its functionality is to translate IP address to physical
+   addresses. The acronym ARP stands for Address Resolution Protocol which is one of the most important protocols of the Network layer in the 
+   OSI model. 
+Note: ARP finds the hardware address, also known as Media Access Control (MAC) address, of a host from its known IP address. 
+Let’s look at how ARP works. 
+
+Imagine a device that wants to communicate with the other over the internet. What ARP does? Is it broadcast a packet to all the devices of the source network. 
+The devices of the network peel the header of the data link layer from the protocol data unit (PDU) called frame and transfer the packet to the network layer (layer 3 of OSI) where the network ID of the packet is validated with the destination IP’s network ID of the packet and if it’s equal then it responds to the source with the MAC address of the destination, else the packet reaches the gateway of the network and broadcasts packet to the devices it is connected with and validates their network ID 
+
+The above process continues till the second last network device in the path reaches the destination where it gets validated and ARP, in turn, responds with the destination MAC address. 
+ 
+
+ARP: ARP stands for (Address Resolution Protocol) it is responsible to find the hardware address of a host from a know IP address there are three basic ARP terms.
+The important terms associated with ARP are: 
+
+(i) Reverse ARP
+
+(ii) Proxy ARP
+
+4. Describe deadlock characteristics.
+
+Ans. 4 Deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting for another resource 
+acquired by some other process. 
+Consider an example when two trains are coming toward each other on the same track and there is only one track, none of the trains can move once 
+they are in front of each other. A similar situation occurs in operating systems when there are two or more processes that hold some resources and
+ wait for resources held by other(s). For example, in the below diagram, Process 1 is holding Resource 1 and waiting for resource 2 which is 
+ acquired by process 2, and process 2 is waiting for resource 1. 
+ Deadlock can arise if the following four conditions hold simultaneously (Necessary Conditions) 
+Mutual Exclusion: One or more than one resource are non-shareable (Only one process can use at a time) 
+Hold and Wait: A process is holding at least one resource and waiting for resources. 
+No Preemption: A resource cannot be taken from a process unless the process releases the resource. 
+Circular Wait: A set of processes are waiting for each other in circular form. 
+
+Methods for handling deadlock 
+There are three ways to handle deadlock 
+1) Deadlock prevention or avoidance: The idea is to not let the system into a deadlock state. 
+One can zoom into each category individually, Prevention is done by negating one of above mentioned necessary conditions for deadlock. 
+Avoidance is kind of futuristic in nature. By using strategy of “Avoidance”, we have to make an assumption. We need to ensure that all 
+information about resources which process will need are known to us prior to execution of the process. We use Banker’s algorithm 
+(Which is in-turn a gift from Dijkstra) in order to avoid deadlock. 
+
+2) Deadlock detection and recovery: Let deadlock occur, then do preemption to handle it once occurred. 
+
+3) Ignore the problem altogether: If deadlock is very rare, then let it happen and reboot the system. This is the approach that both Windows 
+and UNIX take. 
+
+5. Describe pagination in brief. ( Marks 10)
+
+Paging is a method of writing and reading data from a secondary storage(Drive) for use in primary storage(RAM). When a computer runs out of RAM,
+ the operating system (OS) will move pages of memory over to the computer’s hard disk to free up RAM for other processes. This ensures that the 
+ operating system will never run out of memory and crash. Too much reliance on memory paging can impair performance, however, because random 
+ access memory operates much faster than disk memory. This means the operating system has to wait for the disk to catch up every time a page is
+  swapped; the more a work.
+
+  The OS reads data from blocks called pages, all of which have identical size. In order to do so, the OS first needs to consult the page table
+   which is used by virtual memory to store the
+   mapping between virtual addresses and physical addresses. The physical part of the memory containing a single page is called a frame. When 
+   paging is used, a frame does not have to comprise a single physically contiguous region in storage. This approach offers an advantage over 
+   earlier memory management methods, because it facilitates more efficient and faster use of storage.
+When a program tries to access a page that is not stored in RAM, the processor treats this action as a page fault. When this occurs the operating
+ system must:
+Determine the location of the data on disk.
+Obtain an empty page frame in RAM to use as a container for the data.
+Load the requested data into the available page frame.
+Update the page table to refer to the new page frame.
+Return control to the program, transparently retrying the instruction that caused the page fault.
+When all page frames are in use, the operating system must select a page frame to reuse for the page the program now needs. If the evicted page 
+frame was dynamically allocated by a program to hold data, or if a program modified it since it was read into RAM, it must be written out to disk 
+before being freed. If a program later references the evicted page, another page fault occurs and the page must be read back into RAM.
+Pros:
+By diving the memory into fix blocks, it eliminates the issue of External Fragmentation. It also supports Multiprogramming. Overheads that come 
+with compaction during relocation are eliminated. Easy to swap since everything is the same size, which is usually the same size as disk blocks 
+to and from which pages are swapped.
+Cons:
+Paging increases the price of computer hardware, as page addresses are mapped to hardware. Memory is forced to store variables like page tables. 
+Some memory space stays unused when available blocks are not sufficient for address space for jobs to run. Since the physical memory is split into 
+equal sizes, it allows for internal fragmentation.
+How To Make Paging More Efficient
+Every time the OS is translating from logical to physical, it requires a look up in the page table, which is stored in RAM. Meaning every process 
+request would require two physical memory accesses. This issue greatly reduces the overall performance of our equipment.
+In order to tackle this problem we use the Translation Lookaside Buffer(TLB). The TLB is a memory cache that stores recent translations of virtual
+ memory to physical addresses for faster retrieval.
