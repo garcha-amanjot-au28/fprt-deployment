@@ -10,10 +10,15 @@ function oddeven(){
         }
         
     }
-    return res.join('\r\n');
+    //return res.join('\r\n');
+    return res;
 
     
     
 }
 
-console.log(oddeven());
+//console.log(oddeven());
+result = oddeven();
+console.log(result);
+result2 = result.split(',').join("<br />"));
+document.write(result2);

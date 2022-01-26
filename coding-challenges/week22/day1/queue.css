@@ -1,0 +1,93 @@
+.container {
+  width: 1200px;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-500px, -350px);
+          transform: translate(-500px, -350px);
+}
+
+#heading {
+  font-size: 200px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-bottom: 1px solid #a7a4a4;
+}
+
+.input {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 50px;
+}
+
+#number {
+  width: 950px;
+  height: 75px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 35px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding-left: 20px;
+}
+
+.btn {
+  border-radius: 4px;
+  width: 100px;
+  height: 75px;
+  background-color: white;
+  border: 2px solid;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 30px;
+}
+
+#push {
+  border-color: #14bb14;
+  color: #14bb14;
+  -webkit-transition: ease;
+  transition: ease;
+}
+
+#pop {
+  border-color: red;
+  color: red;
+  margin-left: 20px;
+  -webkit-transition: ease-in-out;
+  transition: ease-in-out;
+}
+
+#reset {
+  border-color: orangered;
+  color: orangered;
+  margin-left: 20px;
+  -webkit-transition: ease-in-out;
+  transition: ease-in-out;
+}
+
+#reset:hover {
+  background-color: rgba(255, 68, 0, 0.432);
+}
+
+#reset:active {
+  background-color: orangered;
+}
+
+#push:hover {
+  background-color: rgba(20, 187, 20, 0.192);
+}
+
+#push:active {
+  background-color: #14bb14;
+}
+
+#result {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 75px;
+}
+
+#pop:hover {
+  background-color: rgba(255, 0, 0, 0.288);
+}
+
+#pop:active {
+  background-color: red;
+}
+/*# sourceMappingURL=queue.css.map */
