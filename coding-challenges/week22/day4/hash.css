@@ -1,0 +1,35 @@
+#container {
+  height: 600px;
+  width: 500px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-250px, -300px);
+          transform: translate(-250px, -300px);
+  background-color: rgba(255, 255, 0, 0.411);
+  position: absolute;
+}
+
+#innercontainer {
+  position: relative;
+  margin-top: 300px;
+  top: 30%;
+  left: 200px;
+}
+
+#heading {
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-left: 110px;
+  margin-top: 100px;
+}
+
+#text {
+  margin-left: 30px;
+}
+
+#output {
+  color: red;
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*# sourceMappingURL=hash.css.map */
